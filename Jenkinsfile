@@ -16,7 +16,7 @@ pipeline {
         stage('Static Code Analysis') {
             steps {
                 withCredentials([string(credentialsId: 'sonarqube_user')]) {
-                    bat 'mvn sonar:sonar --Dsonar.login="sonarqube_user" -Dsonar.host.url=http://192.168.0.106:9099 -Dsonar.projectKey=Task_4' 
+                    bat 'mvn sonar:sonar --Dsonar.login="admin" -Dsonar.password="qusjz@123" -Dsonar.host.url=http://192.168.0.106:9099 -Dsonar.projectKey=Task_4' 
                 }
             }
         }
