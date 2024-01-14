@@ -14,12 +14,9 @@ pipeline {
             }
         }
         stage('Static Code Analysis') {
-            environment {
-                SONAR_URL = "http://192.168.0.106:9099"
-            }
             steps {
                 withCredentials([string(credentialsId: 'Sonar-Token', variable: 'SONAR_AUTH_TOKEN')]) {
-                    bat 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=${SONAR_URL}'
+                    bat 'mvn sonar:sonar -Dsonar.login=$SONAR_AUTH_TOKEN -Dsonar.host.url=http://192.168.0.106:9099'
                 }
             }
         }
