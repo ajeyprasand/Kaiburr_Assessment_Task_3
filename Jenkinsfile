@@ -3,7 +3,7 @@ agent any
   stages {
     stage('Checkout') {
       steps {
-          git branch: 'main', url: 'https://github.com/ajeyprasand/Kaiburr_Assessment_Task_3.git'
+        checkout([$class: 'GitSCM', branches: [[name: '*/main']],userRemoteConfigs: [[url: 'https://github.com/ajeyprasand/Kaiburr_Assessment_Task_3.git']]])
       }
     }
     stage('Build and Test') {
