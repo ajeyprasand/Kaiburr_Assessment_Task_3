@@ -3,9 +3,7 @@ pipeline {
     stages {
         stage('Checkout') {
             steps {
-                script {
                     checkout([$class: 'GitSCM', branches: [[name: '*/main']], userRemoteConfigs: [[url: 'https://github.com/ajeyprasand/Kaiburr_Assessment_Task_4.git']]])
-                }
             }
         }
         stage('Build Code') {
@@ -47,5 +45,4 @@ pipeline {
             }
         }
     }
-
 }
