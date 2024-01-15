@@ -19,6 +19,11 @@ pipeline {
                     bat "mvn sonar:sonar -Dsonar.token=${SONAR_TOKEN} -Dsonar.host.url=http://192.168.0.106:9099 -Dsonar.projectKey=Task_4"
                 }
             }
+        stage('Build Docker') {
+            steps {
+                bat 'docker build -t blank0015/app .'
+                }
+            }
         }
     }
 }
