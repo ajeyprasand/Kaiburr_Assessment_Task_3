@@ -31,8 +31,8 @@ pipeline {
             steps {
                 script {
                      withCredentials([string(credentialsId: 'docker-pwd', variable: 'dockerpwd')]) {
-                             bat 'docker login -u blank0015 -p ${docker-pwd}'
-                             bat 'docker push blank0015/app'
+                             bat "docker login -u blank0015 -p ${dockerpwd}"
+                             bat "docker push blank0015/app"
                         }
                 }
             }
