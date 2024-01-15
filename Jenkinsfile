@@ -8,11 +8,7 @@ pipeline {
                 }
             }
         }
-        stage('Build Code') {
-            steps {
-                bat 'mvn clean package'
-            }
-        }
+
         stage('Static Code Analysis') {
             steps {
                         withCredentials([string(credentialsId: 'sonarqube', variable: 'SONAR_TOKEN')]) {
