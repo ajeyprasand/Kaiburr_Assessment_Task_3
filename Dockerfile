@@ -1,4 +1,3 @@
-FROM Java:17
-EXPOSE 8080
-ADD target/Task_1.jar Task_1.jar
-ENTRYPOINT ["java","-jar","Task_1.jar"]
+FROM eclipse-temurin:17-jdk
+COPY /target/Task_1-0.0.1-SNAPSHOT.jar app.jar
+ENTRYPOINT ["java","-jar","/app.jar"]
