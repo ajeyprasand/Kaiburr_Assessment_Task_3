@@ -20,14 +20,7 @@ pipeline {
                 }    
             }
         }
-        stage('Build Docker') {
-            steps {
-                 script {
-                        bat 'docker build -t blank0015/app .'
-                }
-            }
-        }
-        stage('Deploy Image') {
+        stage('Build Image') {
             steps {
                  script {
                         bat 'docker build -t blank0015/app .'
